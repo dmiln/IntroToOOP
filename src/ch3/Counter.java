@@ -5,6 +5,15 @@ public class Counter {
     private int min;
     private int max;
     private int actual;
+    private int id;
+    private static int countId = 1;
+
+    /*
+      Блок инициализатор id
+     */ {
+        id = countId;
+        countId++;
+    }
 
     Counter(int max) {
         this.max = max;
@@ -59,10 +68,27 @@ public class Counter {
     }
 
     public void setMin(int min) {
-        this.min = min;
+        if (min < max - 5) {
+            this.min = min;
+            actual = this.min;
+        } else {
+            System.out.println("Введите число больше, чем " + (max - 5));
+        }
     }
 
     public void setMax(int max) {
-        this.max = max;
+         if (max > min + 5){
+             this.max = max;
+             if (actual > max){
+                 setActual(actual);
+             }
+         }else {
+             System.out.println("Введите число больше, чем " + (min + 5));
+         }
+
+    }
+
+    public int getId() {
+        return id;
     }
 }
