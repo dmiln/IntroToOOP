@@ -26,6 +26,42 @@ public class Fraction {
         return numerator + "/" + denominator;
     }
 
+    public static Fraction summFraction(Fraction a, int b) {
+        Fraction result = new Fraction();
+        result.denominator = a.denominator;
+        result.numerator = a.numerator  + b * a.denominator;
+        reduce(result);
+        return result;
+    }
+
+    public static Fraction minusFraction(Fraction a, int b){
+        Fraction result = new Fraction();
+        result.denominator = a.denominator;
+        result.numerator = a.numerator  - b * a.denominator;
+        reduce(result);
+        return result;
+    }
+
+    public static Fraction multiplyFraction(Fraction a, int b){
+        Fraction result = new Fraction();
+        result.numerator = a.numerator * b;
+        result.denominator = a.denominator;
+        reduce(result);
+        return result;
+    }
+
+    public static Fraction divisionFraction(Fraction a, int b){
+        Fraction result = new Fraction();
+        result.numerator = a.numerator;
+        result.denominator = a.denominator * b;
+        if (result.denominator < 0){
+            result.numerator = - result.numerator;
+            result.denominator = - result.denominator;
+        }
+        reduce(result);
+        return result;
+    }
+
     public static Fraction summFraction(Fraction a, Fraction b) {
         Fraction result = new Fraction();
         int mod = mod(a.denominator, b.denominator);
