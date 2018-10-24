@@ -1,4 +1,4 @@
-package ch3;
+package eckel.ch3;
 
 public class Fraction {
 

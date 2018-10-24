@@ -1,4 +1,4 @@
-package ch3;
+package eckel.ch3;
 
 public class TestCounter {
     public static void main(String[] args) {

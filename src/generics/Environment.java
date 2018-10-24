@@ -1,0 +1,39 @@
+package generics;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Environment {
+
+    public static void main(String[] args) {
+        List<Pet> pets = new ArrayList<>();
+        pets.add(new Cat());
+        pets.add(new Pet());
+        pets.add(new Dog());
+        pets.add(new Dog());
+        pets.add(new Cat());
+
+        for (Pet p : pets) {
+            p.whoAmI();
+            p.giveVoice();
+        }
+        System.out.println();
+        System.out.println();
+
+
+/*        List<Cat> src = new ArrayList<>();
+        src.add(new Cat());
+        src.add(new Cat());
+        src.add(new Cat());
+        src.add(new Cat());
+        src.add(new Cat());
+
+        List<Pet> dest = new ArrayList<>();
+        Collections.addAll(dest, src.get(0));
+
+        for (Pet p : dest) {
+            p.whoAmI();
+            p.giveVoice();
+        }*/
+    }
+}
