@@ -20,6 +20,16 @@ public class Environment {
         System.out.println();
         System.out.println();
 
+        List<Number> nums = new ArrayList<>();
+        nums.add(2);
+        nums.add(2.2);
+        nums.add(5L);
+        nums.add(5);
+        Number n = nums.get(0);
+
+        System.out.println(n);
+        System.out.println(nums.get(3));
+
 
 /*        List<Cat> src = new ArrayList<>();
         src.add(new Cat());
